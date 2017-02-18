@@ -23,9 +23,10 @@ public class Dvd {
 
     public enum WorkoutType {
         Unknown,
-        Strength,
-        Cardio,
-        CrossTrain
+        RPG,
+        ACT,
+        SPT,
+        FPS
     }
 
     @Id

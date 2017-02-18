@@ -12,6 +12,11 @@
 5. Why is your proposed Web application unique or creative beyond simply meeting the minimum requirements?
     - My site has the mini bbs board which people can share their experiences and thoughts for games. And my site will support the auction function for precious game and for gold customers to post their precious game. In limit time customer who gives the highest price will be get the game. A authentication request for customer is available if they think the games they bought from others is fake. And a blacklist will be added if the situation is true.
 
+### Assignment #1.3 Full Stack Step 1
+1. Login Function is realized with default username and pasword
+2. Current games and types can be shown correctly
+3. A new game with correct type and ID can be added
+
 ## Build status
 
 [![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web-HaominHU.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web-HaominHU)

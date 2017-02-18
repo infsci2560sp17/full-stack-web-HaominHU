@@ -4,14 +4,14 @@
         <title>User Home</title>
     </head>
     <body>
-        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s DVD's!</h1>
+        <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
 
         <div>
-            <table style="border: 1px solid black">
+            <table align = "center" style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Workout Type</th>
+                    <th>Game Type</th>
                 </tr>                
                 <tr data-th-each="dvd : ${dvds}">
                     <td data-th-text="${dvd.id}"></td>
@@ -22,15 +22,16 @@
         </div>
         
         <hr />
-        Add DVD<br />
+        Add Game DISC<br />
         <form data-th-action="@{/dvds/add}" name="addDvdForm" method="post">
             Title: <input type="text" name="title" /><br />
             Workout Type:<br />
             <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
-            <input type="radio" name="workoutType" value="Strength" /> Strength<br />
-            <input type="radio" name="workoutType" value="Cardio" /> Cardio<br />
-            <input type="radio" name="workoutType" value="CrossTrain" /> CrossTrain<br />
-            <input type="submit" value="Add Workout"/>
+            <input type="radio" name="workoutType" value="RPG" /> RPG <br />
+            <input type="radio" name="workoutType" value="ACT" /> ACT <br />
+            <input type="radio" name="workoutType" value="SPT" /> SPT <br />
+            <input type = "radio" name = "workoutType" value = "FPS"/> FPS<br />
+            <input type="submit" value="Add Game"/>
         </form>
         
         <hr />       
