@@ -34,9 +34,17 @@
             <input type="submit" value="Add Game"/>
         </form>
         
-        <hr />       
+        <hr />
+            <a data-th-href = "@{/gameRequests}">Request Game</a>
+        <hr />
+            <a data-th-href = "@{/}"> </a>
+        <hr />  
+            <a data-th-href="@{/files}">Upload your wish list</a>
+        <hr />     
+        
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
+
     </body>
 </html>

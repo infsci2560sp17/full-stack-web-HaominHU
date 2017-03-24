@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Request your game</title>
+    </head>
+    <body>
+        <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
+
+        <div>
+            <table align = "center" style="border: 1px solid black">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Game Type</th>
+                </tr>                
+                <tr data-th-each="gR : ${gameRequests}">
+                    <td data-th-text="${gR.id}"></td>
+                    <td data-th-text="${gR.title}"></td>
+                    <td data-th-text="${gR.gameType}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        Add Your Request<br />
+        <form data-th-action="@{/gameRequests/add}" name="addgameRequestForm" method="post">
+            Title: <input type="text" name="title" /><br />
+            Workout Type:<br />
+            <input type="radio" name="gameType" value="Unknown" checked="checked" /> Unknown<br />
+            <input type="radio" name="gameType" value="RPG" /> RPG <br />
+            <input type="radio" name="gameType" value="ACT" /> ACT <br />
+            <input type="radio" name="gameType" value="SPT" /> SPT <br />
+            <input type = "radio" name = "gameType" value = "FPS"/> FPS<br />
+            <input type="submit" value="Add Request"/>
+        </form>
+        
+        <hr />  
+        
+        <form data-th-action = "@{/dvds}">
+            <input type = "submit" value = "Back"/>
+        </form>
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        
+
+    </body>
+</html>
