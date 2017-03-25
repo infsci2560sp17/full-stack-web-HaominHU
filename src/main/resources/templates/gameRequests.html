@@ -3,6 +3,7 @@
     <head>
         <title>Request your game</title>
     </head>
+    <center>
     <body>
         <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
 
@@ -25,7 +26,7 @@
         Add Your Request<br />
         <form data-th-action="@{/gameRequests/add}" name="addgameRequestForm" method="post">
             Title: <input type="text" name="title" /><br />
-            Workout Type:<br />
+            Game Type:<br />
             <input type="radio" name="gameType" value="Unknown" checked="checked" /> Unknown<br />
             <input type="radio" name="gameType" value="RPG" /> RPG <br />
             <input type="radio" name="gameType" value="ACT" /> ACT <br />
@@ -36,13 +37,15 @@
         
         <hr />  
         
-        <form data-th-action = "@{/mainpage}">
-            <input type = "submit" value = "Back"/>
-        </form>
+
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
+        </form>
+        <form data-th-action = "@{/mainpage}">
+            <input type = "submit" value = "Back"/>
         </form>
         
 
     </body>
+    <center>
 </html>

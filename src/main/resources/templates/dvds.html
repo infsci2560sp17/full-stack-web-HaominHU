@@ -27,7 +27,7 @@
         Add Game DISC<br />
         <form data-th-action="@{/dvds/add}" name="addDvdForm" method="post">
             Title: <input type="text" name="title" /><br />
-            Workout Type:<br />
+            Game Type:<br />
             <input type="radio" name="workoutType" value="Unknown" checked="checked" /> Unknown<br />
             <input type="radio" name="workoutType" value="RPG" /> RPG <br />
             <input type="radio" name="workoutType" value="ACT" /> ACT <br />
@@ -41,7 +41,7 @@
         <form data-th-action = "@{/mainpage}">
             <input type = "submit" value = "Back"/>
         </form>
-        
+
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>

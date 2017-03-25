@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add your game stations:</title>
+    </head>
+    <center>
+    <body>
+        <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
+
+        <div>
+            <table align = "center" style="border: 1px solid black">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Station Type</th>
+                    <th>Year</th>
+                </tr>                
+                <tr data-th-each="gS : ${gameStations}">
+                    <td data-th-text="${gS.id}"></td>
+                    <td data-th-text="${gS.title}"></td>
+                    <td data-th-text="${gS.stationType}"></td>
+                    <td data-th-text="${gS.year}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        Add Your Station:<br />
+        <form data-th-action="@{/gameStations/add}" name="addgameStationForm" method="post">
+            Nickname: <input type="text" name="title" /><br />
+            Station Type:
+            <select name = "stationType">
+                <option value="Unknown">Unknown</option>
+                <option value="Wii">Wii</option>
+                <option value="PS4">PS4</option>
+                <option value="XBOX">XBOX</option>
+                <option value="NS" >NS</option>
+            </select><br />
+            Year: <input type = "text" name = "year"/><br />
+            <input type = "submit" value = "Add Station"/>
+        </form>
+        
+        <hr />  
+        
+
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        <form data-th-action = "@{/mainpage}">
+            <input type = "submit" value = "Back"/>
+        </form>
+        
+
+    </body>
+    </center>
+</html>
