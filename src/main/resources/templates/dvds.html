@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Home</title>
+        <title>Manage Selling Games</title>
         
     </head>
     <center>
@@ -14,11 +14,13 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Game Type</th>
+                    <th>Platform</th>
                 </tr>                
                 <tr data-th-each="dvd : ${dvds}">
                     <td data-th-text="${dvd.id}"></td>
                     <td data-th-text="${dvd.title}"></td>
                     <td data-th-text="${dvd.workoutType}"></td>
+                    <td data-th-text="${dvd.platform}"></td>
                 </tr>
             </table>
         </div>
@@ -33,9 +35,22 @@
             <input type="radio" name="workoutType" value="ACT" /> ACT <br />
             <input type="radio" name="workoutType" value="SPT" /> SPT <br />
             <input type = "radio" name = "workoutType" value = "FPS"/> FPS<br />
+            Station Type:
+            <select name = "platform">
+                <option value="Unknown">Unknown</option>
+                <option value="Wii">Wii</option>
+                <option value="PS4">PS4</option>
+                <option value="XBOX">XBOX</option>
+                <option value="NS" >NS</option>
+            </select><br />
             <input type="submit" value="Add Game"/>
         </form>
         
+        <hr />
+            <form data-th-action="@{/dvds/delete}" name="deleteDvdForm" method="delete">
+            Input the id that you want to delete: <input type="text" name="id" /><br /> 
+            <input type="submit" value="Delete the record"/>
+            </form>
         <hr />
         
         <form data-th-action = "@{/mainpage}">

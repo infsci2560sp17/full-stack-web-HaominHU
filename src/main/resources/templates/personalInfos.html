@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manage your Account:</title>
+    </head>
+    <center>
+    <body>
+        <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
+
+        <div>
+            <table align = "center" style="border: 1px solid black" border = "1">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Membership Level</th>
+                </tr>                
+                <tr data-th-each="pI : ${personalInfos}">
+                    <td data-th-text="${pI.id}"></td>
+                    <td data-th-text="${pI.title}"></td>
+                    <td data-th-text="${pI.phone}"></td>
+                    <td data-th-text="${pI.address}"></td>
+                    <td data-th-text="${pI.levelType}"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <hr />
+        Your Update Info Record:<br />
+        <form data-th-action="@{/personalInfos/add}" name="addpersonalInfoForm" method="post">
+            Nickname: <input type="text" name="title"/><br />
+            Phone No.: <input type = "text" name = "phone" onkeyup = "check();"/><br />
+            <script>
+                function check(){
+                    if (isNaN(phone.value))
+                    {alert("Please input your number correctly");
+                    phone.value="";}
+                    }
+            </script>
+            Address: <input type = "text" name = "address"/><br />
+            <hr />
+            Wanna change your level?
+            <select name = "levelType">
+                <option value="guest">guest</option>
+                <option value="silver">silver</option>
+                <option value="gold">gold</option>
+                <option value="platinum">platinum</option>
+            </select><br />
+            <input type = "submit" value = "Update"/>
+        </form>
+        
+        <hr />  
+        
+
+        <form data-th-action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        <form data-th-action = "@{/mainpage}">
+            <input type = "submit" value = "Back"/>
+        </form>
+        
+
+    </body>
+    </center>
+</html>

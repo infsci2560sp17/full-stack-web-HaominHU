@@ -19,6 +19,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 
 /**
  *
@@ -39,5 +45,26 @@ public class DvdsController {
         repository.save(dvd);
         return new ModelAndView("dvds", "dvds", repository.findAll());
     }
+
+    // @RequestMapping(value = "dvdss/{id}", method = RequestMethod.PUT, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    // public ModelAndView update(@ModelAttribute @Valid Dvd dvd, BindingResult result) {
+    //     repository.save(dvd);
+    //     return new ModelAndView("dvds", "dvds", repository.findAll());
+    // }
+    
+//    @RequestMapping(value = "recipes", method = RequestMethod.DELETE)
+    @RequestMapping(value = "dvds/delete", method = RequestMethod.GET)
+    public ModelAndView delete(@RequestParam(value="id", required=true) Long id) {
+        //log.info("*** delete id = " + id);
+        Dvd dvd = repository.findOne(id);
+        
+        if ( dvd != null ) {
+            //log.info("*** recipe is not null");
+            repository.delete(dvd);
+        }
+
+        return new ModelAndView("dvds", "dvds", repository.findOne(id));
+    }
+
     
 }

@@ -1,6 +1,7 @@
 package edu.infsci2560;
 
 import edu.infsci2560.models.Dvd;
+import edu.infsci2560.models.Dvd.Platform;
 import edu.infsci2560.models.Dvd.WorkoutType;
 import edu.infsci2560.repositories.DvdRepository;
 
@@ -23,9 +24,9 @@ public class FullStackWebApplication {
         ApplicationContext ctx = SpringApplication.run(FullStackWebApplication.class, args);
 
         DvdRepository repository = ctx.getBean(DvdRepository.class);
-        repository.save(new Dvd(1L, "NBA 2K17", WorkoutType.SPT));
-        repository.save(new Dvd(2L, "God of War", WorkoutType.ACT));
-        repository.save(new Dvd(3L, "Final Fantasy XIII", WorkoutType.RPG));
+        repository.save(new Dvd(1L, "NBA 2K17", WorkoutType.SPT,Platform.PS4));
+        repository.save(new Dvd(2L, "God of War", WorkoutType.ACT,Platform.PS4));
+        repository.save(new Dvd(3L, "Final Fantasy XIII", WorkoutType.RPG,Platform.XBOX));
     }
 
 

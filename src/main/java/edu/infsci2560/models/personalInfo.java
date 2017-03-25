@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.infsci2560.models;
 
 import javax.persistence.Entity;
@@ -17,50 +12,44 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  * @author kolobj
  */
 @Entity
-public class Dvd {
+public class personalInfo {
 
     private static final long serialVersionUID = 1L;
 
-    public enum WorkoutType {
-        Unknown,
-        RPG,
-        ACT,
-        SPT,
-        FPS
-    }
-    
-    public enum Platform{
-        Unknown,
-        Wii,
-        PS4,
-        XBOX,
-        NS
+    public enum LevelType {
+        guest,
+        silver,
+        gold,
+        platinum
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     protected String title;
-    protected WorkoutType workoutType;
-    protected Platform platform;
+    protected LevelType levelType;
+    protected Long phone;
+    protected String address;
 
-    public Dvd() {
+    public personalInfo() {
         this.id = Long.MAX_VALUE;
         this.title = null;
-        this.workoutType = WorkoutType.Unknown;
-        this.platform = Platform.Unknown;
+        this.levelType = LevelType.guest;
+        this.phone = null;
+        this.address = null;
     }
 
-    public Dvd(Long id, String name, WorkoutType workoutType, Platform platform) {
+    public personalInfo(Long id, String name, LevelType levelType,Long phone, String address) {
         this.id = id;
         this.title = name;
-        this.workoutType = workoutType;
-        this.platform = platform;
+        this.levelType = levelType;
+        this.phone = phone;
+        this.address = address;
     }
 
     @Override
     public String toString() {
-        return "[ id=" + this.id + ", title=" + this.title + ", workoutType=" + this.workoutType + ", platform"+this.platform+" ]";
+        return "[ id=" + this.id + ", title=" + this.title + ", levelType=" + this.levelType + ", phone="+this.phone+", address"+this.address+" ]";
     }
 
     @Override
@@ -90,27 +79,34 @@ public class Dvd {
     /**
      * @return the workoutType
      */
-    public WorkoutType getWorkoutType() {
-        return workoutType;
+    public LevelType getLevelType() {
+        return levelType;
     }
 
     /**
      * @param workoutType the workoutType to set
      */
-    public void setWorkoutType(WorkoutType workoutType) {
-        this.workoutType = workoutType;
+    public void setLevelType(LevelType levelType) {
+        this.levelType = levelType;
     }
 
     /**
      * @return the id
      */
-
-    public Platform getPlatform(){
-        return platform;
+    public Long getPhone() {
+        return phone;
     }
 
-    public void setPlatform(Platform platform){
-        this.platform = platform;
+    public void setPhone(Long phone){
+        this.phone = phone;
+    }
+
+    public String getAddress(){
+        return address;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
     }
     public Long getId() {
         return id;
