@@ -2,12 +2,14 @@
 <html>
     <head>
         <title>User Home</title>
+        
     </head>
+    <center>
     <body>
-        <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
+        <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
 
         <div>
-            <table align = "center" style="border: 1px solid black">
+            <table style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -35,16 +37,15 @@
         </form>
         
         <hr />
-            <a data-th-href = "@{/gameRequests}">Request Game</a>
-        <hr />
-            <a data-th-href = "@{/}"> </a>
-        <hr />  
-            <a data-th-href="@{/files}">Upload your wish list</a>
-        <hr />     
+        
+        <form data-th-action = "@{/mainpage}">
+            <input type = "submit" value = "Back"/>
+        </form>
         
         <form data-th-action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
         </form>
 
     </body>
+    </center>
 </html>
