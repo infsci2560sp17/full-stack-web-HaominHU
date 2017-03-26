@@ -2,13 +2,20 @@
 <html>
     <head>
         <title>Request your game</title>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Chalkduster",sans-serif
+            }
+            body{
+                text-align: center;
+            }
+        </style>
     </head>
-    <center>
     <body>
         <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
 
         <div>
-            <table align = "center" style="border: 1px solid black">
+            <table align = "center" style="border: 1px solid black" border="2">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -47,5 +54,4 @@
         
 
     </body>
-    </center>
 </html>

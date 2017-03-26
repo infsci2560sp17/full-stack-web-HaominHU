@@ -2,8 +2,15 @@
 <html>
     <head>
         <title>Manage your Account:</title>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Chalkduster",sans-serif
+            }
+            body{
+                text-align: center;
+            }
+        </style>
     </head>
-    <center>
     <body>
         <h1 data-th-inline="text" align = "center">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
 
@@ -62,5 +69,4 @@
         
 
     </body>
-    </center>
 </html>

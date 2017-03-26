@@ -2,14 +2,20 @@
 <html>
     <head>
         <title>Manage Selling Games</title>
-        
+        <style type = "text/css">
+            body,h1{
+                font-family: "Chalkduster",sans-serif
+            }
+            body{
+                text-align: center;
+            }
+        </style>
     </head>
-    <center>
     <body>
         <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
 
         <div>
-            <table style="border: 1px solid black">
+            <table align = "center" style="border: 1px solid black">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
@@ -62,5 +68,4 @@
         </form>
 
     </body>
-    </center>
 </html>

@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>File Upload</title>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Chalkduster",sans-serif
+            }
+            body{
+                text-align: center;
+                background-image: url('http://xbhalo.blob.core.windows.net/wallpapers/halo-1980x1080.jpg');
+            }
+        </style>
     </head>
     <body>
 
@@ -24,5 +33,9 @@
                 </li>
             </ul>
         </div>
+
+        <form data-th-action = "@{/mainpage}">
+            <input type = "submit" value = "Back"/>
+        </form>
     </body>
 </html>
