@@ -51,7 +51,7 @@ The Welcome page shows and help you enter
 
 ### User Input Form
 
-TODO : please provide a description of at least 1 user input form including a screen shot ![](input.jpg)
+Input form in game request ![](input.png)
 
 ## API
 
