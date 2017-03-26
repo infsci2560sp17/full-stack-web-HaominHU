@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Manage your Account:</title>
+        <script type = "text/javascript" src = "http://www.javascript-validation.com/view/js/jvalidation.2.0.0.min.js"></script>
         <style type = "text/css">
             body,h1{
                 font-family: "Chalkduster",sans-serif
@@ -37,14 +38,7 @@
         Your Update Info Record:<br />
         <form data-th-action="@{/personalInfos/add}" name="addpersonalInfoForm" method="post">
             Nickname: <input type="text" name="title"/><br />
-            Phone No.: <input type = "text" name = "phone" onkeyup = "check();"/><br />
-            <script>
-                function check(){
-                    if (isNaN(phone.value))
-                    {alert("Please input your number correctly");
-                    phone.value="";}
-                    }
-            </script>
+            Phone No.: <input type = "text" name = "phone"/><br />
             Address: <input type = "text" name = "address"/><br />
             <hr />
             Wanna change your level?
@@ -54,7 +48,18 @@
                 <option value="gold">gold</option>
                 <option value="platinum">platinum</option>
             </select><br />
-            <input type = "submit" value = "Update"/>
+            <input type = "submit" value = "Update" onclick="check();"/>
+            <script type = "text/javascript">
+                function check(){
+                    requiredfield("title",5, "Enter your correct nickname");
+                    numericfield("phone", 10, "Enter your correct phone number.");
+                    requiredfield("address", 10, "Enter your correct address")
+                }
+                // if (isNaN(phone.value)){
+                //     alert("error");
+                //     phone.value="";
+                // }  
+            </script>
         </form>
         
         <hr />  
