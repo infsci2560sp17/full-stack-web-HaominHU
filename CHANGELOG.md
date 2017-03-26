@@ -7,6 +7,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - TBD.
 
+## [v1.4] - 2017-03-25
+### Added
+- Entities which meet requirements added
+- Interface design
+- CSS added
+- Javascript added
+- Function: Request games, record game stations, update personal information
+
 ## [v1.3] - 2017-02-18
 ### Added
 - Purpose: create the enetity, repository, RESTful web service and return JSON, MVC
@@ -29,7 +37,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Configured developer workspace.
 - Deployed to Heroku.
 
-[Unreleased]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.3...HEAD
+[Unreleased]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.4...HEAD
+[v1.4]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.3...v1.4
 [v1.3]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.2...v1.3
 [v1.2]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.1...v1.2
 [v1.1]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/...v1.1

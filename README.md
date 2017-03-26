@@ -17,6 +17,12 @@
 2. Current games and types can be shown correctly
 3. A new game with correct type and ID can be added
 
+### Assignment #1.4 Full Stack Step 2
+1. 3 Entities add which makes the website realize the functions of request game, update personal information and record the game stations they have.
+2. Web pages are improved and designed by CSS
+3. Some input validation required by javaScript
+4. Readme and changelog update
+
 ## Build status
 
 [![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web-HaominHU.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web-HaominHU)
@@ -31,17 +37,17 @@
 
 ## Key Features
 
-TODO : Please list key features of your project.
-
-* Key Feature 1
-* Key Feature 2
+* User login
+* File upload
 * Key Feature N
 
 ## Project Details
+Welcome page -> login -> main page
 
 ### Landing Page
 
-TODO : please provide a description of your landing page inluding a screen shot ![](https://.../image.JPG)
+The Welcome page shows and help you enter
+![](home.png)
 
 ### User Input Form
 
