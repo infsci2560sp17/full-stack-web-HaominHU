@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Edit Game</title>
+    </head>
+    <body>
+        Modify game info<br />
+        <form data-th-action="@{/dvds/edit/{id}(id=${dvd.id})}" data-th-object="${dvd}" data-th-method="put" role="form">
+            Title: <input type="text" name="title" data-th-value="${dvd.title}" /><br />
+            game Type:<br />
+            <input type="radio" name="workoutType" value="Unknown" checked = "checked"/> Unknown<br />
+            <input type="radio" name="workoutType" value="RPG" /> RPG<br />
+            <input type="radio" name="workoutType" value="ACT" /> ACT<br />
+            <input type="radio" name="workoutType" value="SPT" /> SPT<br />
+            Station Type:
+            <select name = "platform">
+                <option value="Unknown">Unknown</option>
+                <option value="Wii">Wii</option>
+                <option value="PS4">PS4</option>
+                <option value="XBOX">XBOX</option>
+                <option value="NS" >NS</option>
+            </select><br />
+            <input type="submit" value="Update Game Info"/><br />
+            gameType: <span data-th-value="${dvd.getWorkoutType()}" /><br />
+            stationType: <span data-th-value = "${dvd.getPlatform()}" />
+        </form>
+    </body>
+</html>

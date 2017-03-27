@@ -51,9 +51,9 @@ public class Dvd {
         this.platform = Platform.Unknown;
     }
 
-    public Dvd(Long id, String name, WorkoutType workoutType, Platform platform) {
+    public Dvd(Long id, String title, WorkoutType workoutType, Platform platform) {
         this.id = id;
-        this.title = name;
+        this.title = title;
         this.workoutType = workoutType;
         this.platform = platform;
     }
