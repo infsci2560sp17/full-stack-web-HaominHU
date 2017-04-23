@@ -23,6 +23,11 @@
 3. Some input validation required by javaScript
 4. Readme and changelog update
 
+### Assignment #1.5&6 Full Stack 
+1. Game Rating added in Edit page so that users can see other's opinion
+2. Some CSS added to improve the page design
+3. Delete button update and function given
+
 ## Build status
 
 [![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web-HaominHU.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web-HaominHU)
@@ -39,15 +44,26 @@
 
 * User login
 * File upload
-* Key Feature N
+* Game modify(upload/delete)
+* See other users' rating on game(rating pk)
 
 ## Project Details
-Welcome page -> login -> main page
+Welcome page -> login -> main page -> Select sub functional pages
+
+### Log in Page
+
+The Log in  page 
+![](login.png)
 
 ### Landing Page
 
 The Welcome page shows and help you enter
 ![](home.png)
+
+### Main page
+
+The MAIN page for users to choose the web's function
+![](mainpage.png)
 
 ### User Input Form
 

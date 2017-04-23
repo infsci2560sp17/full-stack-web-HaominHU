@@ -7,6 +7,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - TBD.
 
+## [V2]
+### Add
+- Game rating in game Edit page to see other players' rating
+- delete button to delete the game you do not want to sell any more
+- Some CSS improvement added
+
 ## [v1.4] - 2017-03-25
 ### Added
 - Entities which meet requirements added
@@ -37,7 +43,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Configured developer workspace.
 - Deployed to Heroku.
 
-[Unreleased]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.4...HEAD
+[Unreleased]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v2...HEAD
+[v2]:   https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.4...v2
 [v1.4]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.3...v1.4
 [v1.3]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.2...v1.3
 [v1.2]: https://github.com/infsci2560sp17/full-stack-web-HaominHU/compare/v1.1...v1.2
