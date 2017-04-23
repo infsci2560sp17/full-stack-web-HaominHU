@@ -5,6 +5,12 @@ import edu.infsci2560.models.Dvd.Platform;
 import edu.infsci2560.models.Dvd.WorkoutType;
 import edu.infsci2560.repositories.DvdRepository;
 
+import edu.infsci2560.models.Customer;
+import edu.infsci2560.models.Rating;
+import edu.infsci2560.models.RatingPk;
+import edu.infsci2560.repositories.CustomerRepository;
+import edu.infsci2560.repositories.RatingRepository;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +33,19 @@ public class FullStackWebApplication {
         repository.save(new Dvd(1L, "NBA 2K17", WorkoutType.SPT,Platform.PS4));
         repository.save(new Dvd(2L, "God of War", WorkoutType.ACT,Platform.PS4));
         repository.save(new Dvd(3L, "Final Fantasy XIII", WorkoutType.RPG,Platform.XBOX));
+        repository.save(new Dvd(4L, "Super Mario",WorkoutType.RPG,Platform.Wii));
+
+        CustomerRepository customerRepo = ctx.getBean(CustomerRepository.class);
+        customerRepo.save(new Customer(1L, "Bill", "Smith"));
+        customerRepo.save(new Customer(2L, "Jane", "Doe"));
+        customerRepo.save(new Customer(3L, "Dr", "K"));
+        customerRepo.save(new Customer(4L, "Dr", "X"));
+        
+        RatingRepository ratingRepo = ctx.getBean(RatingRepository.class);
+        ratingRepo.save(new Rating(new RatingPk(1L, 1L), 3));
+        ratingRepo.save(new Rating(new RatingPk(2L, 1L), 2));
+        ratingRepo.save(new Rating(new RatingPk(1L, 2L), 4));
+        ratingRepo.save(new Rating(new RatingPk(1L, 4L), 5));
     }
 
 

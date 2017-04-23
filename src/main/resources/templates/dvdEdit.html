@@ -7,6 +7,14 @@ and open the template in the editor.
 <html>
     <head>
         <title>Edit Game</title>
+        <style type = "text/css">
+            body,h1{
+                font-family: "Chalkduster",sans-serif
+            }
+            body{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         Modify game info<br />
@@ -26,8 +34,28 @@ and open the template in the editor.
                 <option value="NS" >NS</option>
             </select><br />
             <input type="submit" value="Update Game Info"/><br />
-            gameType: <span data-th-value="${dvd.getWorkoutType()}" /><br />
-            stationType: <span data-th-value = "${dvd.getPlatform()}" />
+            <!--gameType: <span data-th-value="${dvd.WorkoutType}" /><br />-->
+            <!--stationType: <span data-th-value = "${dvd.Platform}" />-->
+        </form>
+        <hr />
+        <br />
+        <div>
+            <table style="border: 1px solid black" align = "center">
+                <tr>
+                    <th>GameId</th>
+                    <th>CustomerId</th>
+                    <th>Stars</th>
+                </tr>                
+                <tr data-th-each="rating : ${ratings}">
+                    <td data-th-text="${rating.ratingPk.dvdId}"></td>
+                    <td data-th-text="${rating.ratingPk.customerId}"></td>
+                    <td data-th-text="${rating.stars}"></td>
+                </tr>
+            </table>
+        </div>
+
+        <form data-th-action = "@{/dvds}">
+            <input type = "submit" value = "Back"/>
         </form>
     </body>
 </html>

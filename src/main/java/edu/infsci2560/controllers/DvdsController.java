@@ -37,7 +37,9 @@ public class DvdsController {
     private DvdRepository repository;
     
     @RequestMapping(value = "dvds", method = RequestMethod.GET)
-    public ModelAndView index() {        
+    public ModelAndView index() {     
+        ModelAndView mv = new ModelAndView("dvds");
+        mv.addObject("dvds", repository.findAll());   
         return new ModelAndView("dvds", "dvds", repository.findAll());
     }
     
@@ -54,18 +56,24 @@ public class DvdsController {
     // }
     
 //    @RequestMapping(value = "recipes", method = RequestMethod.DELETE)
-    @RequestMapping(value = "dvds/delete", method = RequestMethod.GET)
-    public ModelAndView delete(@RequestParam(value="id", required=true) Long id) {
-        //log.info("*** delete id = " + id);
-        Dvd dvd = repository.findOne(id);
+    // @RequestMapping(value = "dvds/delete", method = RequestMethod.GET)
+    // public ModelAndView delete(@RequestParam(value="id", required=true) Long id) {
+    //     //log.info("*** delete id = " + id);
+    //     Dvd dvd = repository.findOne(id);
         
-        if ( dvd != null ) {
-            //log.info("*** recipe is not null");
-            repository.delete(dvd);
-        }
+    //     if ( dvd != null ) {
+    //         //log.info("*** recipe is not null");
+    //         repository.delete(dvd);
+    //     }
 
-        return new ModelAndView("dvds", "dvds", repository.findOne(id));
-    }
+    //     return new ModelAndView("dvds", "dvds", repository.findOne(id));
+    // }
+
+    @RequestMapping(value = "dvds/{id}", method = RequestMethod.DELETE, consumes="application/x-www-form-urlencoded", produces = "application/json")
+    public ModelAndView delete( @Valid Dvd dvd, BindingResult result) {
+        repository.delete(dvd);
+        return new ModelAndView("dvds", "dvds", repository.findAll());
+    }   
 
     @RequestMapping(value = "dvds/{id}", method = RequestMethod.GET)
     public ModelAndView index(@PathVariable Long id) {        

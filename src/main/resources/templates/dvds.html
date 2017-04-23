@@ -13,7 +13,6 @@
     </head>
     <body>
         <h1 data-th-inline="text">[[${#httpServletRequest.remoteUser}]]'s WeXgame!</h1>
-
         <div>
             <table align = "center" style="border: 1px solid black" border="2">
                 <tr>
@@ -28,6 +27,11 @@
                     <td data-th-text="${dvd.workoutType}"></td>
                     <td data-th-text="${dvd.platform}"></td>
                     <td><a data-th-href="@{/dvds/edit/{id}(id=${dvd.id})}">edit</a></td>
+                    <td>
+                        <form data-th-object="${dvd}" data-th-action="@{/dvds/{id}(id=${dvd.id})}" data-th-method="delete">
+                            <input type="submit" value="delete" />
+                        </form>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -43,14 +47,17 @@
             <input type="radio" name="workoutType" value="SPT" /> SPT <br />
             <input type = "radio" name = "workoutType" value = "FPS"/> FPS<br />
             Station Type:
-            <select name = "platform">
-                <option value="Unknown">Unknown</option>
-                <option value="Wii">Wii</option>
-                <option value="PS4">PS4</option>
-                <option value="XBOX">XBOX</option>
-                <option value="NS" >NS</option>
-            </select><br />
-            <input type="submit" value="Add Game"/>
+                <select name = "platform">
+                    <option value="Unknown">Unknown</option>
+                    <option value="Wii">Wii</option>
+                    <option value="PS4">PS4</option>
+                    <option value="XBOX">XBOX</option>
+                    <option value="NS" >NS</option>
+                </select>
+                <br />
+
+                <input type="submit" value="Add Game"/>
+
         </form>
         
         <hr />
@@ -59,14 +66,14 @@
             <input type="submit" value="Delete the record"/>
             </form>
         <hr />
-        
-        <form data-th-action = "@{/mainpage}">
-            <input type = "submit" value = "Back"/>
-        </form>
 
-        <form data-th-action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
+            <form data-th-action = "@{/mainpage}">
+                <input type = "submit" value = "Back"/>
+            </form>
+            <form data-th-action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+        
 
     </body>
 </html>
